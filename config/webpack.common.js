@@ -13,6 +13,7 @@ module.exports = {
     path: paths.build,
     filename: '[name].bundle.js',
     publicPath: '/',
+    assetModuleFilename: 'assets/[name].[contenthash][ext][query]',
   },
 
   // Customize the webpack build process
@@ -21,8 +22,16 @@ module.exports = {
     new CleanWebpackPlugin(),
 
     // Copies files from target to destination folder
+
     new CopyWebpackPlugin({
-      patterns: [{ from: paths.public, to: '.' }],
+      patterns: [
+        {
+          from: paths.public,
+          to: '.',
+          globOptions: { ignore: ['*.DS_Store'] },
+          noErrorOnMissing: true,
+        },
+      ],
     }),
 
     // Generates an HTML file from a template

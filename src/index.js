@@ -3,6 +3,7 @@ import { example } from '@/js/example'
 
 // Test import of an asset
 import webpackLogo from '@/images/webpack-logo.svg'
+import examplePng from '@/images/example.png'
 
 // Test import of styles
 import '@/styles/index.scss'
@@ -20,7 +21,7 @@ imageBackground.classList.add('image')
 
 // Test a public folder asset
 const imagePublic = document.createElement('img')
-imagePublic.src = 'assets/example.png'
+imagePublic.src = examplePng
 
 const app = document.querySelector('#root')
 app.append(logo, heading, imageBackground, imagePublic)
