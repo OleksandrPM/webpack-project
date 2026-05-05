@@ -10,7 +10,7 @@ module.exports = merge(common, {
   devtool: false,
   output: {
     path: paths.build,
-    publicPath: 'webpack-project',
+    publicPath: '/webpack-project/',
     filename: 'js/[name].[contenthash].bundle.js',
     clean: true,
   },
