@@ -22,25 +22,15 @@ module.exports = {
 
     // Copies files from target to destination folder
     new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: paths.public,
-          to: 'assets',
-          globOptions: {
-            ignore: ['*.DS_Store'],
-          },
-          noErrorOnMissing: true,
-        },
-      ],
+      patterns: [{ from: paths.public, to: '.' }],
     }),
 
     // Generates an HTML file from a template
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
-      title: 'webpack Boilerplate',
-      favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/template.html', // template file
-      filename: 'index.html', // output file
+      title: 'Webpack Boilerplate',
+      template: paths.src + '/template.html',
+      filename: 'index.html',
     }),
   ],
 
